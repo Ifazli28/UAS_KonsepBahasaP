@@ -1,0 +1,238 @@
+/* Reset dan variabel dasar dengan palet warna elegan */
+:root {
+    --primary-color: #2C3539;     /* Charcoal */
+    --primary-light: #445D67;     /* Steel Blue Gray */
+    --secondary-color: #D4AF37;   /* Metallic Gold */
+    --accent-color: #C8A2C8;      /* Lilac */
+    --background-start: #1C1C1C;  /* Rich Black */
+    --background-mid: #2B2B2B;    /* Deep Gray */
+    --background-end: #323232;    /* Elegant Dark */
+    --text-color: #FFFFFF;
+    --success-color: #86A873;     /* Sage Green */
+    --danger-color: #B76E79;      /* Rose Gold */
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-color);
+    background: linear-gradient(135deg, 
+        var(--background-start),
+        var(--background-mid),
+        var(--background-end));
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Elegant background overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(120deg, rgba(212, 175, 55, 0.05) 0%, transparent 70%),
+        radial-gradient(circle at 80% 20%, rgba(200, 162, 200, 0.05) 0%, transparent 60%);
+    animation: backgroundFloat 20s ease infinite alternate;
+    z-index: 0;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Timer Section */
+.timer-section {
+    background: rgba(44, 53, 57, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 3.5rem;
+    border-radius: 25px;
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.timer-section:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.timer-display {
+    font-size: 6.5rem;
+    font-weight: 300;
+    background: linear-gradient(45deg, var(--secondary-color), #F5D77F);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 1.5rem 0;
+    letter-spacing: 2px;
+}
+
+/* Enhanced button styles */
+.btn {
+    padding: 1.2rem 2.4rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, 
+        var(--primary-color), 
+        var(--primary-light));
+    color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(45deg, 
+        var(--primary-light), 
+        var(--primary-color));
+    border-color: var(--secondary-color);
+}
+
+/* Todo Section */
+.todo-section {
+    background: rgba(44, 53, 57, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* Todo items */
+.todo-item {
+    background: rgba(68, 93, 103, 0.3);
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    border-left: 3px solid var(--secondary-color);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.todo-item:hover {
+    transform: translateX(5px);
+    background: rgba(68, 93, 103, 0.4);
+    border-left-width: 5px;
+}
+
+.todo-item.completed {
+    background: rgba(134, 168, 115, 0.1);
+    border-left-color: var(--success-color);
+}
+
+/* Input styling */
+input {
+    background: rgba(68, 93, 103, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--text-color);
+    padding: 1.2rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: rgba(68, 93, 103, 0.3);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Timer status */
+.timer-status {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes backgroundFloat {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.timer-display.active {
+    animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(44, 53, 57, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timer-display {
+        font-size: 4.5rem;
+    }
+
+    .timer-section,
+    .todo-section {
+        padding: 2rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.8rem;
+    }
+}

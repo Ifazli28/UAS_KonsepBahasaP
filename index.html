@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sederhana Untuk Membantu Pembelajaran</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Website Pendamping Belajar</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="timer-section">
+                <div class="timer-container">
+                    <h2>Timer Belajar</h2>
+                    <p>Gunakan timer ini untuk membantu fokus belajar dan istirahat.</p>
+                    <div class="timer-display">
+                        <span id="minutes">25</span>:<span id="seconds">00</span>
+                    </div>
+                    <div class="timer-controls">
+                        <div class="timer-settings">
+                            <div class="setting">
+                                <label>Waktu Belajar (menit):</label>
+                                <input type="number" id="studyTime" value="25" min="1">
+                            </div>
+                            <div class="setting">
+                                <label>Waktu Istirahat (menit):</label>
+                                <input type="number" id="breakTime" value="5" min="1">
+                            </div>
+                        </div>
+                        <div class="timer-buttons">
+                            <button id="startTimer" class="btn">Mulai</button>
+                            <button id="resetTimer" class="btn">Reset</button>
+                        </div>
+                        <div class="timer-status">
+                            Status: <span id="timerStatus">Waktu Belajar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spotify-container">
+                    <h3>Musik Belajar</h3>
+                    <p>Putar musik dari playlist Spotify ini untuk membantu fokus belajar.</p>
+                    <iframe style="border-radius:12px" 
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1E4spk5CR01gVt?si=AuclEbvGQPymmlSDu0DLjA" 
+                            width="100%" 
+                            height="352" 
+                            frameBorder="0" 
+                            allowfullscreen="" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="todo-section">
+                <h2>Daftar Tugas Yang Harus Diselesaikan</h2>
+                <div class="todo-container">
+                    <div class="todo-input">
+                        <input type="text" id="todoInput" placeholder="Tambah tugas baru...">
+                        <button id="addTodo" class="btn">Tambah</button>
+                    </div>
+                    <ul id="todoList" class="todo-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
